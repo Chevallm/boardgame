@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="left-up" width="9" height="7" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
+ <editorsettings>
+  <export target="map1..tmx" format="tmx"/>
+ </editorsettings>
+ <tileset firstgid="1" source="Floor.tsx"/>
+ <tileset firstgid="5" source="Walls.tsx"/>
+ <tileset firstgid="122" source="Door_1.tsx"/>
+ <tileset firstgid="126" source="Decor.tsx"/>
+ <tileset firstgid="207" source="Torch.tsx"/>
+ <layer id="1" name="floor" width="9" height="7">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,1,1,1,1,1,1,1,0,
+0,1,1,1,1,1,1,1,0,
+0,1,1,1,1,1,1,1,0,
+0,1,1,1,1,1,1,1,0,
+0,0,0,0,1,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="walls" width="9" height="7">
+  <properties>
+   <property name="collision" type="bool" value="true"/>
+  </properties>
+  <data encoding="csv">
+5,9,9,9,9,9,9,9,12,
+14,18,18,18,18,18,18,18,30,
+23,0,0,0,0,0,0,0,30,
+23,0,0,0,0,0,0,0,30,
+23,0,0,0,0,0,0,0,30,
+23,45,45,45,0,45,45,45,30,
+50,54,54,54,0,54,54,54,57
+</data>
+ </layer>
+ <layer id="5" name="decor" width="9" height="7">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,208,0,208,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="doors" width="9" height="7">
+  <properties>
+   <property name="collision" type="bool" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,122,0,0,0,0,
+0,0,0,0,124,0,0,0,0
+</data>
+ </layer>
+</map>
