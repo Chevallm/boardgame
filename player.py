@@ -12,7 +12,7 @@ class Player:
         for line in range(0,4):
             rectsForDir = []
             for col in range (0,3):
-                rectsForDir.append((0, 16*line, 16*col+16, 16*line+16))
+                rectsForDir.append((0, 32*line, 32*col+32, 32*line+32))
             rects.append(rectsForDir)
         self.sprite_bottom = spritesheet.images_at(rects[0])
         self.sprite_left = spritesheet.images_at(rects[1])

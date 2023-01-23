@@ -8,7 +8,7 @@ class App:
     def __init__(self):
         self._running = True
         self._screen = None
-        self.size = self.weight, self.height = 9*16, 7*16
+        self.size = self.weight, self.height = 40*32, 60*32
  
     def on_init(self):
         pygame.init()
@@ -34,13 +34,13 @@ class App:
 
         if event.type == pygame.MOUSEMOTION:
             tile_x, tile_y = pygame.mouse.get_pos()
-            tile_x, tile_y = tile_x // 16, tile_y // 16
+            tile_x, tile_y = tile_x // 32, tile_y // 32
             tile = self.game.board.get_tile_gid(tile_x, tile_y, 0)
             self.game_drawer.hovered_tile = tile_x, tile_y
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             tile_x, tile_y = pygame.mouse.get_pos()
-            tile_x, tile_y = tile_x // 16, tile_y // 16
+            tile_x, tile_y = tile_x // 32, tile_y // 32
             tile = self.game.board.get_tile_gid(tile_x, tile_y, 0)
             if tile == 0: # not floor
                 pass

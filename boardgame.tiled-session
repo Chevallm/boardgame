@@ -7,9 +7,12 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "tiled/map2.tmx#Decor": {
+            "scaleInEditor": 1
+        }
     },
     "last.exportedFilePath": "C:/Users/Maxime/git/boardgame/tiled",
-    "last.externalTilesetPath": "C:/Users/Maxime/git/boardgame/assets/Mini_Dungeon_v1.0/Objects",
+    "last.externalTilesetPath": "C:/Users/Maxime/git/boardgame/assets/Mini_Dungeon_v1.0/Tilesets",
     "last.imagePath": "C:/Users/Maxime/git/boardgame/assets/Mini_Dungeon_v1.0/Objects",
     "map.height": 30,
     "map.lastUsedExportFilter": "Fichiers de carte Tiled (*.tmx *.xml)",
