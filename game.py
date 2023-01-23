@@ -15,6 +15,6 @@ class Game:
         self.board = load_pygame("./tiled/map1.tmx")
 
     def init_players(self):
-        self.players.append(Player('human', 'human2', 5, 5))
+        self.players.append(Player('human', 'human2', 4, 3))
 
 

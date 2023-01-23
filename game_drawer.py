@@ -39,4 +39,3 @@ class GameDrawer:
             s.set_alpha(128)
             s.fill((255, 0, 0))
             self.screen.blit(s, (tile_x *16, tile_y * 16))
-            #pygame.draw.rect(self.screen, (255, 0, 0, 200), (tile_x*16, tile_y*16, 16, 16))
