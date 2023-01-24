@@ -1,3 +1,4 @@
+from operator import indexOf
 from game_drawer import GameDrawer
 import pygame
 from pygame.locals import *
@@ -8,7 +9,7 @@ class App:
     def __init__(self):
         self._running = True
         self._screen = None
-        self.size = self.weight, self.height = 40*32, 60*32
+        self.size = self.weight, self.height = 30*32, 20*32
  
     def on_init(self):
         pygame.init()
@@ -21,16 +22,7 @@ class App:
         if event.type == pygame.QUIT:
             self._running = False
         if event.type == pygame.KEYDOWN:
-            
-            if event.key == pygame.K_UP:
-                self.game.players[0].y -= 1
-            if event.key == pygame.K_DOWN:
-                self.game.players[0].y += 1
-            if event.key == pygame.K_LEFT:
-                self.game.players[0].x -= 1
-            if event.key == pygame.K_RIGHT:
-                self.game.players[0].x += 1
-
+            pass
 
         if event.type == pygame.MOUSEMOTION:
             tile_x, tile_y = pygame.mouse.get_pos()
@@ -41,13 +33,13 @@ class App:
         if event.type == pygame.MOUSEBUTTONDOWN:
             tile_x, tile_y = pygame.mouse.get_pos()
             tile_x, tile_y = tile_x // 32, tile_y // 32
-            tile = self.game.board.get_tile_gid(tile_x, tile_y, 0)
-            if tile == 0: # not floor
-                pass
-            
-            else:
+            collision_layer = self.game.board.get_layer_by_name('collision')
+            collision_layer_index = indexOf(self.game.board.layers, collision_layer)
+            tile = self.game.board.get_tile_gid(tile_x, tile_y, collision_layer_index)
+            if tile == 0:
                 self.game.players[0].x = tile_x
                 self.game.players[0].y = tile_y
+                
         
 
     def on_loop(self):

@@ -1,5 +1,4 @@
 from spritesheet import SpriteSheet
-import pygame
 
 class Player:
     def __init__(self, name = '', sprite = None, x = 0, y = 0):

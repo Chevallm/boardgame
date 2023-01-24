@@ -3,14 +3,56 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "tiled/map2.tmx",
     "expandedProjectPaths": [
+        ".",
+        "tiled"
     ],
     "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "tiled/Floor32.tsx": {
+            "scaleInDock": 1
+        },
+        "tiled/Key.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tiled/map2.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 475.33333333333326,
+                "y": 110
+            }
+        },
+        "tiled/map2.tmx#Chest_Closed": {
+            "scaleInDock": 1
+        },
         "tiled/map2.tmx#Decor": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tiled/map2.tmx#Door_1": {
+            "scaleInDock": 1
+        },
+        "tiled/map2.tmx#Door_2": {
+            "scaleInDock": 1
+        },
+        "tiled/map2.tmx#DoubleDoor": {
+            "scaleInDock": 1
+        },
+        "tiled/map2.tmx#Torch": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tiled/map2.tmx#Walls": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         }
     },
+    "frame.defaultDuration": 100,
     "last.exportedFilePath": "C:/Users/Maxime/git/boardgame/tiled",
     "last.externalTilesetPath": "C:/Users/Maxime/git/boardgame/assets/Mini_Dungeon_v1.0/Tilesets",
     "last.imagePath": "C:/Users/Maxime/git/boardgame/assets/Mini_Dungeon_v1.0/Objects",
@@ -22,15 +64,18 @@
     "map.tileWidth": 16,
     "map.width": 40,
     "openFiles": [
+        "tiled/map2.tmx"
     ],
     "project": "boardgame.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "tiled/map2.tmx",
+        "tiled/Key.tsx"
     ],
     "tileset.lastUsedFilter": "Tous les Fichiers (*)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 16,
-        "width": 16
+        "height": 32,
+        "width": 32
     }
 }
