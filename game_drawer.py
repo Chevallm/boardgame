@@ -1,47 +1,34 @@
-import time
 from operator import indexOf
 import pygame
-from pygame.locals import *
-from pytmx import *
+from pytmx import TiledTileLayer
 
 from game import Game
 
 
 class GameDrawer:
-    def __init__(self, game: Game, pygame: pygame, screen: pygame.Surface) -> None:
+    def __init__(self, game: Game, pg: pygame, screen: pygame.Surface) -> None:
         self.game = game
-        self.pygame = pygame
+        self.pg = pg
         self.screen = screen
         self.hovered_tile = None
 
     def draw(self):
         self.draw_board()
         self.draw_players()
-        self.draw_hovered_tile()
+        self.draw_hovered_tile() 
 
     def draw_board(self):
         for layer in self.game.board.visible_layers:
-            print(layer.name, layer.visible)
-            for x, y, img in layer.tiles():
-                self.screen.blit(img, (x*32, y*32))
-        #animation_start_time = time.time()
-        #for gid, tile_properties in self.game.board.tile_properties.items():
-            # iterate over the frames of the animation
-            # if there is no animation, this list will be empty
-            #if 'animation' in tile_properties:
-                #animation = tile_properties['animation']
-                #duration = animation.duration
-                #elapsed_time = time.time() - animation_start_time
-                #current_frame = int(elapsed_time / duration) % len(animation)
-                #image = self.game.board.get_tile_image_by_gid(gid + current_frame)
-                #self.screen.blit(image, (tile_properties.))
+            if layer.visible and isinstance(layer, TiledTileLayer):
+                for x, y, img in layer.tiles():
+                    self.screen.blit(img, (x*32, y*32))
 
     def draw_players(self):
         for player in self.game.players:
             self.screen.blit(player.sprite_bottom[0], (player.x * 32, player.y * 32))
 
     def draw_hovered_tile(self):
-        if self.hovered_tile == None:
+        if self.hovered_tile is None:
             return
         tile_x, tile_y = self.hovered_tile
         player_x, player_y = (self.game.players[0].x, self.game.players[0].y)

@@ -2,8 +2,9 @@ from pytmx import *
 
 from player import Player
 
+
 class Game:
-    
+
     def __init__(self) -> None:
         self.board = []
         self.players = []
@@ -16,5 +17,3 @@ class Game:
 
     def init_players(self):
         self.players.append(Player('human', 'human', 4, 3))
-
-

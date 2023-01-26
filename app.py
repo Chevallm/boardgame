@@ -1,16 +1,19 @@
 from operator import indexOf
-from game_drawer import GameDrawer
+
 import pygame
-from pygame.locals import *
 
 from game import Game
- 
+from game_drawer import GameDrawer
+
+
 class App:
     def __init__(self):
+        self.game_drawer = None
+        self.game = None
         self._running = True
         self._screen = None
-        self.size = self.weight, self.height = 30*32, 20*32
- 
+        self.size = self.weight, self.height = 30 * 32, 20 * 32
+
     def on_init(self):
         pygame.init()
         self._screen = pygame.display.set_mode(self.size, pygame.HWSURFACE | pygame.DOUBLEBUF)
@@ -27,7 +30,6 @@ class App:
         if event.type == pygame.MOUSEMOTION:
             tile_x, tile_y = pygame.mouse.get_pos()
             tile_x, tile_y = tile_x // 32, tile_y // 32
-            tile = self.game.board.get_tile_gid(tile_x, tile_y, 0)
             self.game_drawer.hovered_tile = tile_x, tile_y
 
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -39,8 +41,6 @@ class App:
             if tile == 0:
                 self.game.players[0].x = tile_x
                 self.game.players[0].y = tile_y
-                
-        
 
     def on_loop(self):
         pass
@@ -52,18 +52,19 @@ class App:
 
     def on_cleanup(self):
         pygame.quit()
- 
+
     def on_execute(self):
-        if self.on_init() == False:
+        if self.on_init() is False:
             self._running = False
- 
-        while( self._running ):
+
+        while self._running:
             for event in pygame.event.get():
                 self.on_event(event)
             self.on_loop()
             self.on_render()
         self.on_cleanup()
- 
-if __name__ == "__main__" :
+
+
+if __name__ == "__main__":
     theApp = App()
     theApp.on_execute()
