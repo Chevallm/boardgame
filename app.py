@@ -38,7 +38,7 @@ class App:
             collision_layer = self.game.board.get_layer_by_name('collision')
             collision_layer_index = indexOf(self.game.board.layers, collision_layer)
             tile = self.game.board.get_tile_gid(tile_x, tile_y, collision_layer_index)
-            can_move = tile is 0
+            can_move = tile == 0
             if can_move:
                 self.game.move_player_to(self.game.players[1], tile_x, tile_y)
 
