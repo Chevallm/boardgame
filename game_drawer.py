@@ -15,13 +15,17 @@ class GameDrawer:
     def draw(self):
         self.draw_board()
         self.draw_players()
-        self.draw_hovered_tile() 
+        self.draw_hovered_tile()
 
     def draw_board(self):
         for layer in self.game.board.visible_layers:
-            if layer.visible and isinstance(layer, TiledTileLayer):
+            if isinstance(layer, TiledTileLayer):
                 for x, y, img in layer.tiles():
-                    self.screen.blit(img, (x*32, y*32))
+                    self.screen.blit(img, (x * 32, y * 32))
+        for object_group in self.game.board.objectgroups:
+            pass
+            for object in object_group:
+                pass
 
     def draw_players(self):
         for player in self.game.players:

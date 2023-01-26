@@ -14,7 +14,11 @@ class Player:
             for col in range(0, 3):
                 rects_for_dir.append((0, 32 * line, 32 * col + 32, 32 * line + 32))
             rects.append(rects_for_dir)
-        self.sprite_bottom = spritesheet.images_at(rects[0])
-        self.sprite_left = spritesheet.images_at(rects[1])
-        self.sprite_right = spritesheet.images_at(rects[2])
-        self.sprite_right = spritesheet.images_at(rects[3])
+        self.sprite_bottom = spritesheet.images_at(rects[0], (0, 0, 0))
+        self.sprite_left = spritesheet.images_at(rects[1], (0, 0, 0))
+        self.sprite_right = spritesheet.images_at(rects[2], (0, 0, 0))
+        self.sprite_right = spritesheet.images_at(rects[3], (0, 0, 0))
+
+    def move_to(self, x: int, y: int) -> None:
+        self.x = x
+        self.y = y

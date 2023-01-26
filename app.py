@@ -38,17 +38,17 @@ class App:
             collision_layer = self.game.board.get_layer_by_name('collision')
             collision_layer_index = indexOf(self.game.board.layers, collision_layer)
             tile = self.game.board.get_tile_gid(tile_x, tile_y, collision_layer_index)
-            if tile == 0:
-                self.game.players[0].x = tile_x
-                self.game.players[0].y = tile_y
+            can_move = tile is 0
+            if can_move:
+                self.game.move_player_to(self.game.players[1], tile_x, tile_y)
 
     def on_loop(self):
         pass
 
     def on_render(self):
-        self._screen.fill((0, 0, 0))
+        self._screen.fill((50, 50, 50))
         self.game_drawer.draw()
-        pygame.display.flip()
+        pygame.display.update()
 
     def on_cleanup(self):
         pygame.quit()

@@ -21,7 +21,7 @@ class SpriteSheet:
         if colorkey is not None:
             if colorkey == -1:
                 colorkey = image.get_at((0,0))
-            image.set_colorkey(colorkey, pygame.RLEACCEL)
+            image.set_colorkey(colorkey)
         return image
 
     def images_at(self, rects, colorkey = None):
